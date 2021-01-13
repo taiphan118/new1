@@ -1,0 +1,170 @@
+/* Header */
+header {
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+    /* z-index uu tien */
+    left: 50%;
+    transform: translateX(-50%);
+    /* left bao nhieu thi transform am bay nhieu */
+}
+
+header nav ul {
+    border-bottom: 1px solid #ffffff57;
+    /* solid nét liền */
+}
+
+header nav ul li a{
+    text-transform: uppercase;
+    padding: 25px !important;
+    /* bị đè nên phải thêm !important */
+}
+
+header nav ul li{
+    position: relative;
+}
+
+header nav ul li.active::after{
+    content: "";
+    display: block;
+    width: 100%;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    /* chỉ có background mới dùng được gradient */
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+}
+
+header nav ul li::after {
+    content: "";
+    display: block;
+    width: 0;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    /* chỉ có background mới dùng được gradient */
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s;
+}
+
+header nav ul li:hover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    /* chỉ có background mới dùng được gradient */
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+
+}
+
+/* Carousel */
+.carousel-inner .carousel-item {
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 250px;
+}
+.carousel-inner .item1 {
+    background-image: url("./../img/hero-1.jpg");
+}
+
+.carousel-inner .item2 {
+    background-image: url("./../img/hero-2.jpg");
+}
+
+.carousel-inner .item3 {
+    background-image: url("./../img/hero-3.jpg");
+}
+
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1.5px solid white;
+    background: transparent;
+}
+
+.carousel-indicators li.active{
+    background: white;
+}
+
+.carousel-indicators {
+    justify-content: flex-start;
+}
+
+.btn-trailer {
+    color: white!important;
+    /* debug vo hover after */
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    padding: 8px 30px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden
+}
+
+.btn-trailer::after {
+    content: "";
+    background: orange;
+    display: block;
+    height: 100%;
+    width: 0;
+    background: #ec7532;
+    position: absolute;
+    top: 0%;
+    left: -15%;
+    transform: skewX(30deg);
+    transition: 0.5s;
+}
+
+.btn-trailer:hover::after {
+    width: 140%;
+}
+
+.btn-trailer i,
+.btn-trailer span {
+    position: relative;
+    z-index: 1;
+}
+
+/* New In */
+#newin {
+    margin-top: 4rem;
+}
+
+.title__heading {
+    text-transform: uppercase;
+    color: #ec7532;
+    border-bottom: 1px solid #00000024;
+    padding-bottom: 20px;
+    position: relative;
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 992px) {
+    .title__heading {
+    font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .title__heading {
+        font-size: 1rem;
+    }
+}
+.title__heading::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 20%;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    position: absolute;
+    bottom: 0;
+}
+
+.slick-prev::before, .slick-next::before {
+    color: #ec7532;
+}
+
